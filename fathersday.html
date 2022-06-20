@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <script src="https://unpkg.com/telescopic-text/lib/index.js"></script>
+  <link href="https://unpkg.com/telescopic-text/lib/index.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter">
+</head>
+
+<div id="telescopicPoem" style="font-family:'Inter', sans-serif"></div>
+<script>
+  const telescopicContent = createTelescopicTextFromBulletedList(`- Happy Fathers Day
+- Dad!
+ - to the best
+  - ! I love
+  - you,
+   - your 
+   - humor,
+    - humor,
+    - generosity,
+     - generosity, and sacrifice for us,
+ - Dad!`, {separator: ' ', textMode: 'text'});
+  const container = document.getElementById("telescopicPoem");
+  container.appendChild(telescopicContent);
+</script>
+
+</html>
