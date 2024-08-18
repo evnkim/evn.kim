@@ -4,7 +4,7 @@ import Footer from "./Footer";
 export default function Home() {
   return (
     <main className="w-full flex flex-col items-center">
-      <div className="flex flex-col items-center w-4/5 mt-12">
+      <div className="flex flex-col items-center w-full px-8 mt-12">
         <div className="flex flex-col w-full items-start">
           <h1 className="text-3xl mb-2">👋 Hello!</h1>
           <div>

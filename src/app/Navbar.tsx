@@ -1,15 +1,25 @@
+"use client";
 import Link from "next/link";
 import ThemeToggle from "./ThemeToggle";
+import { usePathname } from "next/navigation";
 
 const Navlink: React.FC<{
   href: string;
   label: string;
   addtlCSS: string;
 }> = ({ href, label, addtlCSS }) => {
+  const pathname = usePathname();
+  const isActive =
+    pathname === href || (href !== "/" && pathname.startsWith(href));
+
   return (
     <Link
       href={href}
-      className={`${addtlCSS} text-black dark:text-white hover:text-cyan-600 dark:hover:text-cyan-300`}
+      className={`${addtlCSS} ${
+        isActive
+          ? "text-cyan-600 dark:text-cyan-300"
+          : "text-black dark:text-white"
+      } hover:text-cyan-600 dark:hover:text-cyan-300`}
     >
       {label}
     </Link>
