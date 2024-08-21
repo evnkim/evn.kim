@@ -62,7 +62,7 @@ const ProjectBox: React.FC<{
       </div>
       <p className="text-gray-600 dark:text-gray-300">{description}</p>
     </div>
-    <div className="flex mt-auto pt-4 space-x-2">
+    <div className="flex flex-wrap mt-auto pt-4 space-x-2">
       {tags.map((tag, index) => (
         <Tag key={index} name={tag} />
       ))}
@@ -115,8 +115,9 @@ const ProjectsPage = () => {
       title: "Slipping Hexagons",
       description:
         "An educational YouTube Channel which teaches unique physics concepts with a computational animation library (Manim). Over 50k views and 2.5k subscribers.",
-      tags: ["Manim", "Physics", "Graphic Production"],
+      tags: ["Manim", "Physics", "Python"],
       demoLink: "https://youtube.com/@slippinghexagons",
+      githubLink: "https://github.com/evnkim/manim-physics-videos",
     },
     {
       title: "Piper the Pika",
