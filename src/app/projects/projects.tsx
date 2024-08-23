@@ -111,7 +111,7 @@ const ProjectsPage = () => {
     {
       title: "Plume",
       description:
-        "The all-in-one judging and registration platform for HackMIT 2024. I sepcifically built the discord verification system to allow users to interact with one another on a discord server.",
+        "The all-in-one judging and registration platform for HackMIT 2024. I specifically built the discord verification system to allow users to interact with one another on a discord server.",
       tags: ["React", "Flask", "PostgreSQL", "Discord", "Web"],
     },
     {
@@ -137,11 +137,11 @@ const ProjectsPage = () => {
       githubLink: "https://github.com/evnkim/piper-the-pika",
     },
     {
-      title: "evnkim.github.io",
+      title: "evn.kim",
       description:
         "This website! Built with Next.js, Tailwind CSS, and Vercel.",
       tags: ["Next.js", "Tailwind CSS", "Web"],
-      githubLink: "https://github.com/evnkim/evnkim.github.io",
+      githubLink: "https://github.com/evnkim/evn.kim",
     },
     // Add more projects as needed
   ];
