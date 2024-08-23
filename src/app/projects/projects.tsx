@@ -27,8 +27,8 @@ const Tag: React.FC<{
 const ProjectBox: React.FC<{
   title: string;
   description: string;
-  githubLink: string;
-  demoLink: string;
+  githubLink?: string;
+  demoLink?: string;
   tags: string[];
 }> = ({ title, description, githubLink, demoLink, tags }) => (
   <div className="flex flex-col mb-1 p-4 border rounded-md border-gray-300 dark:border-gray-600 shadow-sm">
@@ -64,7 +64,17 @@ const ProjectBox: React.FC<{
     </div>
     <div className="flex flex-wrap mt-auto pt-4 space-x-2">
       {tags.map((tag, index) => (
-        <Tag key={index} name={tag} />
+        <Tag
+          key={index}
+          name={tag}
+          isButton={false}
+          isSelected={false}
+          onClick={function (
+            event: React.MouseEvent<HTMLSpanElement, MouseEvent>
+          ): void {
+            throw new Error("Function not implemented.");
+          }}
+        />
       ))}
     </div>
   </div>
@@ -140,7 +150,7 @@ const ProjectsPage = () => {
 
   const allTags = useMemo(() => {
     const tags = new Set(projects.flatMap((project) => project.tags));
-    return ["All", ...tags];
+    return ["All", ...Array.from(tags)];
   }, [projects]);
 
   const filteredProjects = useMemo(() => {
