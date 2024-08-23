@@ -23,11 +23,11 @@ export default function Home() {
           <h1 className="text-3xl mb-2">👋 Hello!</h1>
           <div>
             <p>
-              I'm currently a student at MIT studying Computer Science, Physics,
-              and some Math (8 + 6-3 + 18). I'm interested in doing meaningful
-              research in quantum computing or AI/computer vision - see the{" "}
-              <CyanLink href="/projects">projects</CyanLink> tab for my progress
-              thus far. Some highlights include creating the{" "}
+              Im currently a student at MIT studying Computer Science, Physics,
+              and some Math (8 + 6-3 + 18). I&apos;m interested in doing
+              meaningful research in quantum computing or AI/computer vision -
+              see the <CyanLink href="/projects">projects</CyanLink> tab for my
+              progress thus far. Some highlights include creating the{" "}
               <CyanLink href="https://doi.org/10.1088/1361-648X/acfdeb">
                 first generative model for superconductors
               </CyanLink>
@@ -52,8 +52,8 @@ export default function Home() {
               <CyanLink href="https://usaaao.org/2022/08/23/15th-ioaa-has-ended/">
                 olympiad
               </CyanLink>
-              , Science Bowl, and math olympiad, just to name a few. I've also
-              translated this experience into the form of{" "}
+              , Science Bowl, and math olympiad, just to name a few. I&apos;ve
+              also translated this experience into the form of{" "}
               <CyanLink href="https://youtube.com/@slippinghexagons">
                 educational YouTube videos
               </CyanLink>
