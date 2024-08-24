@@ -97,7 +97,7 @@ const ProjectsPage = () => {
     {
       title: "Intuision",
       description:
-        "Building a new style of learning – imagine interactive scenes in-place of the static diagrams of a standard textbook. Integrated AI features to edit and generate animations, provide chatbot assistance, and save user learning preferences.Description of Project 2. Highlight the key features and your role in the project.",
+        "Building a new style of learning -- imagine interactive scenes in-place of the static diagrams of a standard textbook. Integrated AI features to edit and generate animations, provide chatbot assistance, and save user learning preferences.",
       tags: ["React", "MERN", "LLM", "RAG", "Web"],
       githubLink: "https://github.com/essence-learning/intuision",
     },
