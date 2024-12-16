@@ -239,12 +239,12 @@ We observe that straightening in the early time range where the data is mostly n
 
 ![FID Scores](/straighten-flows/fid.png)
 
----
-
 ### Future Directions
 
 The results for reflowing on only half of the trajectory was noticeably degraded from reflowing on both halves of the trajectory even though only half of the trajectory was finetuned. This indicates that there is degradation of the predictions on the second half of the model. Perhaps a way to remedy this would be continue training on the half we wish to keep constant with the ground truth coming from the original pre-trained flow matching model.
 
 Further tricks that could be done to improve the performance of ``half-straightening'' can be found in Lee et. al.[^8]. Different loss functions (such as LPIPS or Pseudo-huber) could be incorporated, different timestep sampling procedures could be used, or even original MNIST data could be added to prevent degradation of samples. In all, our experiments show proof of intuition on where you can mess with the trajectory, but may not be a very practical method of generative modeling until more engineering is done on it.
+
+Code for experiments can be found here: [https://github.com/12tqian/6.s978-final-project](https://github.com/12tqian/6.s978-final-project)
 
 ---

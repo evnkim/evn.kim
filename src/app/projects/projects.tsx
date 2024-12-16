@@ -90,6 +90,14 @@ const ProjectsPage = () => {
       demoLink: "https://doi.org/10.1088/1361-648X/acfdebA",
     },
     {
+      title: "Straightening Flows",
+      description:
+        "A blog post on straightening the flow of diffusion model and flow mathcing models to speed up generation. We also discuss their equivalence.",
+      tags: ["ML", "Python", "PyTorch", "CV"],
+      demoLink: "/blogs/straighten-flows",
+      githubLink: "https://github.com/12tqian/6.s978-final-project",
+    },
+    {
       title: "Quadratic Flow",
       description: "WIP.",
       tags: ["ML", "Python", "PyTorch", "CV"],
@@ -113,6 +121,7 @@ const ProjectsPage = () => {
       description:
         "The all-in-one judging and registration platform for HackMIT 2024. I specifically built the discord verification system to allow users to interact with one another on a discord server.",
       tags: ["React", "Flask", "PostgreSQL", "Discord", "Web"],
+      githubLink: "https://github.com/techx/plume",
     },
     {
       title: "Hexblend",
