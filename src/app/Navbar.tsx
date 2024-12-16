@@ -44,6 +44,9 @@ const Navbar: React.FC = () => {
             <Navlink href="/projects" label="Projects" addtlCSS="" />
           </li>
           <li>
+            <Navlink href="/blogs" label="Blogs" addtlCSS="" />
+          </li>
+          <li>
             <ThemeToggle />
           </li>
         </ul>

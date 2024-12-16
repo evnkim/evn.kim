@@ -1,0 +1,25 @@
+.prose a {
+  color: #06b6d4; /* A blue color for links */
+  text-decoration: none; /* Add underline for clarity */
+  transition: color 0.3s; /* Smooth transition on hover */
+}
+.prose a:hover {
+  color: #0891b2; /* Lighter blue on hover */
+}
+
+.dark .prose a {
+  color: #67e8f9; /* Darker blue on hover */
+  text-decoration: none; /* Add underline for clarity */
+  transition: color 0.3s; /* Smooth transition on hover */
+}
+.dark .prose a:hover {
+  color: #a5f3fc; /* Darker blue on hover */
+}
+
+.katex-display {
+  text-align: center;
+}
+
+.prose h1 {
+  font-weight: 700;
+}
