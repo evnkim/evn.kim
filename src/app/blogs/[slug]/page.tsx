@@ -31,7 +31,7 @@ export default async function BlogPost({
   const contentHtml = processedContent.toString();
 
   return (
-    <div className="p-8 max-w-2xl mx-auto">
+    <div className="w-full p-8 max-w-2xl mx-auto">
       <link
         rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css"

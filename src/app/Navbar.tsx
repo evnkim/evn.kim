@@ -37,7 +37,7 @@ const Navbar: React.FC = () => {
           Evan Kim
         </Link>
         <ul className="flex space-x-4 items-center">
-          <li>
+          <li className="hidden md:block">
             <Navlink href="/" label="Home" addtlCSS="" />
           </li>
           <li>

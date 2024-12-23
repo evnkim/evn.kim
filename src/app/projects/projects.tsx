@@ -92,7 +92,7 @@ const ProjectsPage = () => {
     {
       title: "Straightening Flows",
       description:
-        "A blog post on straightening the flow of diffusion model and flow mathcing models to speed up generation. We also discuss their equivalence.",
+        "A blog post on straightening the flow of diffusion model and flow matching models to speed up generation. We also discuss their equivalence.",
       tags: ["ML", "Python", "PyTorch", "CV"],
       demoLink: "/blogs/straighten-flows",
       githubLink: "https://github.com/12tqian/6.s978-final-project",
