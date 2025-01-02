@@ -51,12 +51,7 @@ export default async function BlogPost({
       <link
         rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css"
-        precedence="default"
       />
-      <h1 className="text-3xl font-bold mb-4">{post.title}</h1>
-      {post.date && (
-        <time className="text-gray-500 mb-8 block">{post.date}</time>
-      )}
       <div
         className="prose dark:prose-invert"
         dangerouslySetInnerHTML={{ __html: contentHtml }}
