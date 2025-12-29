@@ -17,7 +17,7 @@ export const Section: React.FC<{
 /**
  * A styled abstract/callout block
  */
-export const Abstract: React.FC<{
+export const Remark: React.FC<{
   children: React.ReactNode;
   className?: string;
 }> = ({ children, className = "" }) => (

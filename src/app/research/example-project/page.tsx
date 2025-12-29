@@ -13,23 +13,22 @@ import {
 // PROJECT METADATA - Edit this for each project
 // ============================================
 const projectData = {
-  title: "Project Title: A Subtitle That Explains the Core Contribution",
+  title: "Scaling View Synthesis Transformers",
   authors: [
-    { name: "Your Name", affiliation: 1 },
-    { name: "Collaborator Name", affiliation: 2 },
+    { name: "Evan Kim*", affiliation: 1, url: "https://evn.kim" },
+    { name: "Hyunwoo Ryu*", affiliation: 1, url: "https://sites.google.com/view/hyunwooryu" },
+    { name: "Thomas W. Mitchel", affiliation: 2, url: "https://mitchel.computer"},
+    { name: "Vincent Sitzmann", affiliation: 1, url: "https://www.vincentsitzmann.com/"}
   ],
   affiliations: {
     1: "MIT",
-    2: "Stanford University",
+    2: "PlayStation",
   },
-  venue: "Conference Name 2025",
-  venueNote: "Oral",
   links: [
     { label: "arXiv", url: "#" },
-    { label: "Code", url: "https://github.com/yourusername/project" },
-    { label: "Demo", url: "#" },
+    { label: "Code", url: "https://github.com/evnkim/SVSM" },
   ],
-  summary: "A one-line summary of what this project does and why it matters.",
+  summary: "TL;DR: view synthesis transformers which achieve SoTA PSNR with 3x less FLOPs.",
 };
 
 // ============================================
@@ -44,8 +43,6 @@ export default function ExampleProjectPage() {
         title={projectData.title}
         authors={projectData.authors}
         affiliations={projectData.affiliations}
-        venue={projectData.venue}
-        venueNote={projectData.venueNote}
         links={projectData.links}
         summary={projectData.summary}
       />
@@ -53,21 +50,9 @@ export default function ExampleProjectPage() {
       {/* Main Content */}
       <main>
         <Section title="Abstract">
-          <Abstract>
             <p>
-              Describe your project here. This section should provide a
-              high-level overview of the problem you&apos;re solving, your
-              approach, and the key results. Keep it concise but
-              comprehensive—typically 150-250 words for research projects.
+            Recently, geometry-free view synthesis transformers have achieved state-of-the-art results in Novel View Synthesis (NVS), outperforming traditional approaches that rely on explicit geometry modeling. However, the specific factors that govern how their performance scales with compute remain poorly understood. In this work, we conduct a rigorous analysis of the scaling laws for view synthesis transformers and elucidate a series of design choices for training compute-optimal NVS models. Most significantly, we find that an encoder–decoder architecture, which was previously found to be less scalable, can in fact be compute-optimal. We attribute the previously inferior performance of previous encoder–decoder methods to certain architectural choices and inconsistent training compute across comparisons. Across several compute levels, we demonstrate that our encoder–decoder architecture, which we call the <b>Scalable View Synthesis Model (SVSM)</b>, scales as effectively as decoder-only models, achieves a superior performance–compute Pareto frontier, and outperforms the previous state-of-the-art on real-world NVS benchmarks with substantially reduced training compute.
             </p>
-            <p className="mt-4">
-              For example: We present <strong>ProjectName</strong>, a novel
-              approach to [problem domain]. Our method achieves [key result] by
-              [key technique]. Experiments on [benchmarks] demonstrate that our
-              approach outperforms previous state-of-the-art methods by [metric
-              improvement].
-            </p>
-          </Abstract>
         </Section>
 
         <Section title="Method Overview">

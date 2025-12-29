@@ -26,7 +26,7 @@ export const AuthorList: React.FC<{
           ) : (
             author.name
           )}
-          <sup className="text-cyan-500 text-xs ml-0.5">
+          <sup className="text-xs ml-0.5">
             {author.affiliation}
           </sup>
           {idx < authors.length - 1 && ", "}
@@ -36,7 +36,7 @@ export const AuthorList: React.FC<{
     <div className="text-sm text-gray-600 dark:text-gray-400 italic mt-2">
       {Object.entries(affiliations).map(([num, name], idx) => (
         <span key={num}>
-          <sup className="text-cyan-500">{num}</sup>
+          <sup>{num}</sup>
           {name}
           {idx < Object.entries(affiliations).length - 1 && ", "}
         </span>

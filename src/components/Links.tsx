@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { FiGithub, FiExternalLink } from "react-icons/fi";
+import { FiGithub, FiExternalLink, FiPlay, FiFileText, FiVideo } from "react-icons/fi";
+import { SiArxiv } from "react-icons/si";
 import { IconType } from "react-icons";
 
 /**
@@ -62,20 +63,38 @@ export const ExternalLink: React.FC<{ href: string; size?: number }> = ({
 );
 
 /**
- * A styled button-like link for project pages (arXiv, Code, Demo, etc.)
+ * Get icon for a link based on its label
+ */
+const getIconForLabel = (label: string): IconType | null => {
+  const lower = label.toLowerCase();
+  if (lower.includes("arxiv")) return SiArxiv;
+  if (lower.includes("github") || lower.includes("code")) return FiGithub;
+  if (lower.includes("demo") || lower.includes("live")) return FiPlay;
+  if (lower.includes("paper") || lower.includes("pdf")) return FiFileText;
+  if (lower.includes("video")) return FiVideo;
+  return null;
+};
+
+/**
+ * A minimal button link for research pages with auto icon detection
  */
 export const ButtonLink: React.FC<{
   href: string;
   children: React.ReactNode;
-}> = ({ href, children }) => {
+  icon?: IconType;
+}> = ({ href, children, icon }) => {
   const isExternal = href.startsWith("http");
+  const label = typeof children === "string" ? children : "";
+  const Icon = icon || getIconForLabel(label);
+
   return (
     <Link
       href={href}
       target={isExternal ? "_blank" : undefined}
       rel={isExternal ? "noopener noreferrer" : undefined}
-      className="px-4 py-2 bg-cyan-500/10 border border-cyan-500/30 rounded-lg text-cyan-600 dark:text-cyan-400 font-medium hover:bg-cyan-500/20 hover:border-cyan-500 transition-all hover:-translate-y-0.5"
+      className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-stone-700 dark:text-stone-300 bg-stone-200/60 dark:bg-stone-700/60 hover:bg-stone-300/80 dark:hover:bg-stone-600/80 rounded-md transition-colors"
     >
+      {Icon && <Icon size={16} />}
       {children}
     </Link>
   );
@@ -88,7 +107,7 @@ export const ButtonLinkGroup: React.FC<{
   links: { label: string; url: string }[];
   className?: string;
 }> = ({ links, className = "" }) => (
-  <div className={`flex flex-wrap justify-center gap-3 ${className}`}>
+  <div className={`flex flex-wrap justify-center gap-2 ${className}`}>
     {links.map((link, idx) => (
       <ButtonLink key={idx} href={link.url}>
         {link.label}
@@ -96,4 +115,3 @@ export const ButtonLinkGroup: React.FC<{
     ))}
   </div>
 );
-

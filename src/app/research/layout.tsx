@@ -1,4 +1,7 @@
+import { Inter } from "next/font/google";
 import ThemeToggle from "../ThemeToggle";
+
+const inter = Inter({ subsets: ["latin"] });
 
 export default function ResearchLayout({
   children,
@@ -6,7 +9,7 @@ export default function ResearchLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="min-h-screen">
+    <div className={`min-h-screen ${inter.className}`}>
       {/* Minimal header with just theme toggle */}
       <header className="fixed top-0 left-0 right-0 z-50 py-4">
         <div className="max-w-5xl mx-auto px-4 flex items-center gap-3">
