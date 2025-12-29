@@ -3,7 +3,7 @@
 import {
   ResearchHeader,
   Section,
-  Abstract,
+  Remark,
   SubSection,
   Figure,
   BibTeX,

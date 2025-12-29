@@ -9,7 +9,7 @@ export {
 } from "./Links";
 
 // Sections
-export { Section, Abstract, SubSection } from "./Section";
+export { Section, Remark, SubSection } from "./Section";
 
 // Media
 export { Figure, Video, YouTubeEmbed } from "./Media";
