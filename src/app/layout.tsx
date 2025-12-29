@@ -20,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-zinc-100 dark:bg-zinc-800 `}>
+      <body className={`${inter.className} bg-stone-100 dark:bg-stone-800 `}>
         <Providers>
           <div className="flex flex-col min-h-screen items-center p-4 pt-8">
             <div className="max-w-3xl w-full flex flex-col space-between items-center">

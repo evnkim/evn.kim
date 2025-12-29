@@ -1,28 +1,7 @@
 "use client";
 
-import React, { useState, useMemo, MouseEventHandler } from "react";
-import Link from "next/link";
-import { FiGithub, FiExternalLink } from "react-icons/fi";
-
-const Tag: React.FC<{
-  name: string;
-  isButton: boolean;
-  isSelected: boolean;
-  onClick: MouseEventHandler<HTMLSpanElement>;
-}> = ({ name, isButton = false, isSelected = false, onClick = () => {} }) => (
-  <span
-    className={`inline-block rounded-full px-2 py-0.5 text-xs ${
-      isButton
-        ? isSelected
-          ? "cursor-pointer bg-cyan-700 text-white dark:bg-cyan-300 dark:text-gray-800"
-          : "cursor-pointer bg-cyan-300 text-gray-800 dark:bg-cyan-800 dark:text-gray-200 hover:bg-cyan-400 dark:hover:bg-cyan-600"
-        : "bg-cyan-300 text-gray-800 dark:bg-cyan-800 dark:text-gray-200"
-    }`}
-    onClick={onClick}
-  >
-    {name}
-  </span>
-);
+import React, { useState, useMemo } from "react";
+import { Tag, GitHubLink, ExternalLink } from "@/components";
 
 const ProjectBox: React.FC<{
   title: string;
@@ -38,43 +17,15 @@ const ProjectBox: React.FC<{
           {title}
         </h3>
         <div className="flex space-x-4">
-          {githubLink && (
-            <Link
-              href={githubLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-600 hover:text-black dark:text-gray-400 dark:hover:text-white"
-            >
-              <FiGithub size={20} />
-            </Link>
-          )}
-          {demoLink && (
-            <Link
-              href={demoLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-600 hover:text-black dark:text-gray-400 dark:hover:text-white"
-            >
-              <FiExternalLink size={20} />
-            </Link>
-          )}
+          {githubLink && <GitHubLink href={githubLink} />}
+          {demoLink && <ExternalLink href={demoLink} />}
         </div>
       </div>
       <p className="text-gray-600 dark:text-gray-300">{description}</p>
     </div>
     <div className="flex flex-wrap mt-auto pt-4 space-x-2">
       {tags.map((tag, index) => (
-        <Tag
-          key={index}
-          name={tag}
-          isButton={false}
-          isSelected={false}
-          onClick={function (
-            event: React.MouseEvent<HTMLSpanElement, MouseEvent>
-          ): void {
-            throw new Error("Function not implemented.");
-          }}
-        />
+        <Tag key={index} name={tag} />
       ))}
     </div>
   </div>

@@ -14,7 +14,7 @@ export default async function BlogPage() {
         {posts.map((post) => (
           <li key={post.slug} className="mb-4">
             <Link href={`/blogs/${post.slug}`}>
-              <div className="flex flex-col p-4 rounded-md shadow-sm border border-gray-300 dark:border-gray-600 bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700">
+              <div className="flex flex-col p-4 rounded-md shadow-sm border border-gray-300 dark:border-gray-600 bg-stone-100 dark:bg-stone-800 hover:bg-stone-200 dark:hover:bg-stone-700">
                 <h2 className="text-2xl font-semibold">
                   {post.frontmatter.title}
                 </h2>
