@@ -25,3 +25,6 @@ export {
 // Tags
 export { Tag } from "./Tag";
 
+// Math (LaTeX)
+export { InlineMath, BlockMath } from "./Math";
+

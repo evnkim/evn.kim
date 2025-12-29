@@ -8,6 +8,8 @@ import {
   Figure,
   BibTeX,
   CyanLink,
+  InlineMath,
+  BlockMath,
 } from "@/components";
 
 // ============================================
@@ -71,22 +73,60 @@ export default function ExampleProjectPage() {
             }
           />
 
-          <SubSection title="Key Insight: Encode once, decode many times.">
-            <p className="mb-4">
-              TODO
+          <SubSection title="Encode once, decode many times.">
+            <p>
+              Decoder-only LVSM recomputes context information for every target view rendered. 
+              SVSM instead uses an encoder-decoder design: a bidirectional encoder processes the 
+              context images <em>once</em> into latent tokens <InlineMath>{"\\mathbf{z} = \\mathcal{E}[\\mathfrak{C}]"}</InlineMath>, 
+              then a cross-attention decoder renders each target view from this fixed representation. 
+              This reduces rendering complexity 
+              from <InlineMath>{"\\mathcal{O}(V_T V_C)"}</InlineMath> to <InlineMath>{"\\mathcal{O}(V_T + V_C)"}</InlineMath>—a 
+              significant saving when rendering many views. The tradeoff: unlike LVSM, the encoder 
+              can&apos;t discard target-irrelevant information. But SVSM&apos;s compute efficiency lets us 
+              scale up model size and training steps such that, normalized by compute budget, SVSM 
+              significantly outperforms LVSM.
             </p>
           </SubSection>
 
-          <SubSection title="What makes this possible? Effective Batch Size of NVS.">
+          <SubSection title="Why is this better? Effective Batch Size.">
+            <p className="mb-4">
+              Training cost scales with both the number of scenes (batch size <InlineMath>B</InlineMath>) and 
+              target views per scene (<InlineMath>V_T</InlineMath>). We find empirically that what matters 
+              is their product—the <em>effective batch size</em>{" "}
+              <InlineMath>{"B_{\\text{eff}} \\equiv B \\cdot V_T"}</InlineMath>. Configurations with the 
+              same <InlineMath>{"B_{\\text{eff}}"}</InlineMath> achieve nearly identical performance 
+              (within ±0.2 PSNR).
+            </p>
+            <b>TODO: insert figure here</b>
+            <p className="mb-4">
+              For decoder-only LVSM, compute scales as:
+            </p>
+            <BlockMath>{"\\chi^{\\text{(LVSM)}} \\propto B \\cdot V_T \\cdot (V_C + 1) = B_{\\text{eff}}(V_C + 1)"}</BlockMath>
+            <p className="mb-4">
+              So there&apos;s <em>no advantage</em> to tuning <InlineMath>V_T</InlineMath>—all 
+              configurations at fixed <InlineMath>{"B_{\\text{eff}}"}</InlineMath> cost the same. 
+              In contrast, SVSM scales as:
+            </p>
+            <BlockMath>{"\\chi^{\\text{(SVSM)}} \\propto B(V_C + V_T) = B_{\\text{eff}} + B \\cdot V_C"}</BlockMath>
             <p>
-              TODO
+              By reducing <InlineMath>B</InlineMath> and increasing <InlineMath>V_T</InlineMath>, 
+              we achieve the same effective batch size—and performance—with <em>lower compute</em>. 
+              This justifies our encoder-decoder design that efficiently decodes multiple targets.
             </p>
           </SubSection>
         </Section>
 
         <Section title="Results">
           <SubSection title="Scaling Laws: compute-efficent Pareto frontier.">
-            TODO
+            <p>
+              We evaluate our architecture rigorously by training both models on various compute budgets. We also test in several datasets and view context count settings: RE10K (2 context views), DL3DV (4 context views), and Objaverse (8 context views). In all cases, SVSM consistently requires much less training compute to achieve the same performance as LVSM.
+            </p>
+
+            <p><b>TODO: 3 scaling graphs</b> </p>
+
+            <p>
+              By design, the rendering speed is also significantly faster.
+            </p>
             {/* <div className="overflow-x-auto mb-8">
               <table className="w-full text-sm">
                 <thead>
@@ -137,7 +177,22 @@ export default function ExampleProjectPage() {
 
           <SubSection title="Qualitative Results: RE10K, DL3DV, Objaverse.">
             <p>
-              TODO
+              Photo grid RE10K
+            </p>
+            <p>
+              Video RE10K
+            </p>
+            <p>
+              Photo grid DL3DV
+            </p>
+            <p>
+              Video DL3DV
+            </p>
+            <p>
+              Photo grid Objaverse
+            </p>
+            <p>
+              Video Objaverse
             </p>
             {/* Example: <Video src="/path/to/demo.mp4" caption="Demo video showing our method in action." /> */}
           </SubSection>
