@@ -7,6 +7,7 @@ import {
   SubSection,
   Figure,
   BibTeX,
+  CyanLink,
 } from "@/components";
 
 // ============================================
@@ -57,34 +58,36 @@ export default function ExampleProjectPage() {
 
         <Section title="Method Overview">
           <Figure
-            src="/path/to/method-figure.png"
+            src="/research/svsm/lvsm_svsm.png"
             alt="Method overview diagram"
-            caption="Figure 1: Overview of our proposed method. (a) First component, (b) Second component, (c) Final output."
+            caption={
+              <>
+                Figure 1: Architectures of the current SOTA, the{" "} 
+                <CyanLink href="https://haian-jin.github.io/projects/LVSM/">decoder-only LVSM</CyanLink>{" "}
+                (a) and SVSM (ours, b). We demonstrate that an encoder-decoder transformer
+                architecture outperforms the prior state-of-the-art model while dramatically
+                reducing the training compute budget.
+              </>
+            }
           />
 
-          <p className="mb-4">
-            Describe your methodology here. Break it down into digestible
-            subsections if needed.
-          </p>
-
-          <SubSection title="Key Insight">
+          <SubSection title="Key Insight: Encode once, decode many times.">
             <p className="mb-4">
-              What&apos;s the core idea that makes your approach work? This is
-              often the most important part to communicate clearly.
+              TODO
             </p>
           </SubSection>
 
-          <SubSection title="Technical Details">
+          <SubSection title="What makes this possible? Effective Batch Size of NVS.">
             <p>
-              Add more technical details here for readers who want to understand
-              the implementation.
+              TODO
             </p>
           </SubSection>
         </Section>
 
         <Section title="Results">
-          <SubSection title="Quantitative Comparison">
-            <div className="overflow-x-auto mb-8">
+          <SubSection title="Scaling Laws: compute-efficent Pareto frontier.">
+            TODO
+            {/* <div className="overflow-x-auto mb-8">
               <table className="w-full text-sm">
                 <thead>
                   <tr className="bg-cyan-500/10">
@@ -129,13 +132,12 @@ export default function ExampleProjectPage() {
                   </tr>
                 </tbody>
               </table>
-            </div>
+            </div> */}
           </SubSection>
 
-          <SubSection title="Qualitative Results">
+          <SubSection title="Qualitative Results: RE10K, DL3DV, Objaverse.">
             <p>
-              Add images, videos, or interactive demos showcasing your results
-              here.
+              TODO
             </p>
             {/* Example: <Video src="/path/to/demo.mp4" caption="Demo video showing our method in action." /> */}
           </SubSection>
@@ -144,11 +146,11 @@ export default function ExampleProjectPage() {
         <Section title="Citation">
           <p className="mb-4">If you find this work useful, please cite:</p>
           <BibTeX
-            citation={`@inproceedings{yourname2025project,
-  title={Project Title: A Subtitle That Explains the Core Contribution},
-  author={Your Name and Collaborator Name},
-  booktitle={Conference Name},
-  year={2025}
+            citation={`@inproceedings{kim2026svsm,
+  title={Scaling View Synthesis Transformers},
+  author={Evan Kim and Hyunwoo Ryu and Thomas W. Mitchel and Vincent Sitzmann},
+  booktitle={arXiv preprint arXiv:2601.xxxxx},
+  year={2026}
 }`}
           />
         </Section>

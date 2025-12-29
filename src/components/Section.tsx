@@ -37,7 +37,7 @@ export const SubSection: React.FC<{
   className?: string;
 }> = ({ title, children, className = "" }) => (
   <div className={className}>
-    <h3 className="text-xl font-semibold mt-6 mb-3 text-cyan-600 dark:text-cyan-400">
+    <h3 className="text-xl font-semibold mt-6 mb-3">
       {title}
     </h3>
     {children}

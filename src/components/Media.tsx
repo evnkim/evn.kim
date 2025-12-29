@@ -4,14 +4,14 @@
 export const Figure: React.FC<{
   src: string;
   alt: string;
-  caption?: string;
+  caption?: React.ReactNode;
   className?: string;
 }> = ({ src, alt, caption, className = "" }) => (
   <figure className={`my-8 text-center ${className}`}>
     <img
       src={src}
       alt={alt}
-      className="max-w-full rounded-lg shadow-lg mx-auto"
+      className="max-w-full mx-auto"
     />
     {caption && (
       <figcaption className="text-sm text-gray-600 dark:text-gray-400 mt-3 italic">
