@@ -78,12 +78,12 @@ export const BibTeX: React.FC<{
 
   return (
     <div className={`relative ${className}`}>
-      <pre className="bg-slate-800 text-slate-300 p-4 rounded-lg overflow-x-auto text-sm font-mono">
+      <pre className="bg-slate-200 text-slate-700 dark:bg-slate-800 dark:text-slate-300 p-4 rounded-lg overflow-x-auto text-sm font-mono">
         {citation}
       </pre>
       <button
         onClick={handleCopy}
-        className="absolute top-2 right-2 px-3 py-1 bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-400 rounded text-xs transition-colors"
+        className="absolute top-2 right-2 px-3 py-1 bg-cyan-600/20 hover:bg-cyan-600/30 text-cyan-600 dark:bg-cyan-500/20 dark:hover:bg-cyan-500/30 dark:text-cyan-400 rounded text-xs transition-colors"
       >
         {copied ? "Copied!" : "Copy"}
       </button>
@@ -118,7 +118,7 @@ export const ResearchHeader: React.FC<{
 
   return (
     <header className="text-center mb-12 pb-8 border-b border-gray-200 dark:border-gray-700">
-      <h1 className="text-3xl md:text-4xl font-bold mb-6 leading-tight bg-gradient-to-r from-cyan-500 via-cyan-400 to-teal-400 bg-clip-text text-transparent">
+      <h1 className="text-3xl md:text-4xl font-bold mb-6 leading-tight">
         {title}
       </h1>
 
