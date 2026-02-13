@@ -46,7 +46,7 @@ export const Video: React.FC<{
       autoPlay={autoPlay}
       loop={loop}
       muted={muted}
-      className="max-w-full rounded-lg shadow-lg mx-auto"
+      className="max-w-full shadow-lg rounded-md mx-auto"
     />
     {caption && (
       <figcaption className="text-sm text-gray-600 dark:text-gray-400 mt-3 italic">

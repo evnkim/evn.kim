@@ -10,6 +10,7 @@ import {
   CyanLink,
   InlineMath,
   BlockMath,
+  Video,
 } from "@/components";
 
 // ============================================
@@ -52,6 +53,15 @@ export default function ExampleProjectPage() {
 
       {/* Main Content */}
       <main>
+        <div className="flex justify-center my-8">
+          <Figure
+            src="/research/svsm/teaser_scaling_main_fixed.png"
+            alt="Scaling laws comparison"
+            caption="Performance vs. compute scaling comparison between SVSM and LVSM on RealEstate10K."
+            className="max-w-lg"
+          />
+        </div>
+
         <Section title="Abstract">
             <p>
             Recently, geometry-free view synthesis transformers have achieved state-of-the-art results in Novel View Synthesis (NVS), outperforming traditional approaches that rely on explicit geometry modeling. However, the specific factors that govern how their performance scales with compute remain poorly understood. In this work, we conduct a rigorous analysis of the scaling laws for view synthesis transformers and elucidate a series of design choices for training compute-optimal NVS models. Most significantly, we find that an encoder–decoder architecture, which was previously found to be less scalable, can in fact be compute-optimal. We attribute the previously inferior performance of previous encoder–decoder methods to certain architectural choices and inconsistent training compute across comparisons. Across several compute levels, we demonstrate that our encoder–decoder architecture, which we call the <b>Scalable View Synthesis Model (SVSM)</b>, scales as effectively as decoder-only models, achieves a superior performance–compute Pareto frontier, and outperforms the previous state-of-the-art on real-world NVS benchmarks with substantially reduced training compute.
@@ -176,25 +186,42 @@ export default function ExampleProjectPage() {
           </SubSection>
 
           <SubSection title="Qualitative Results: RE10K, DL3DV, Objaverse.">
-            <p>
-              Photo grid RE10K
-            </p>
-            <p>
-              Video RE10K
-            </p>
-            <p>
-              Photo grid DL3DV
-            </p>
-            <p>
-              Video DL3DV
-            </p>
-            <p>
-              Photo grid Objaverse
-            </p>
-            <p>
-              Video Objaverse
-            </p>
-            {/* Example: <Video src="/path/to/demo.mp4" caption="Demo video showing our method in action." /> */}
+            <Figure
+              src="/research/svsm/qualitative_twoview_new.png"
+              alt="RE10K qualitative results"
+              caption="Qualitative comparison on RE10K dataset (2 context views)."
+            />
+            
+            <Figure
+              src="/research/svsm/qualitative_fourview.png"
+              alt="DL3DV qualitative results"
+              caption="Qualitative comparison on DL3DV dataset (4 context views)."
+            />
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 my-8">
+            <Video 
+                src="/research/svsm/re10k_compile_final.mp4"
+                caption="Novel view synthesis on RE10K dataset with full compute"
+                autoPlay={true}
+                loop={true}
+                muted={true}
+              />
+              <Video 
+                src="/research/svsm/svsm_obj_only.mp4"
+                caption="SVSM (ours) on Objaverse with limited compute"
+                autoPlay={true}
+                loop={true}
+                muted={true}
+              />
+              <Video 
+                src="/research/svsm/lvsm_obj_only.mp4"
+                caption="LVSM (decoder-only) on Objaverse with limited compute"
+                autoPlay={true}
+                loop={true}
+                muted={true}
+              />
+              
+            </div>
           </SubSection>
         </Section>
 
@@ -204,7 +231,7 @@ export default function ExampleProjectPage() {
             citation={`@inproceedings{kim2026svsm,
   title={Scaling View Synthesis Transformers},
   author={Evan Kim and Hyunwoo Ryu and Thomas W. Mitchel and Vincent Sitzmann},
-  booktitle={arXiv preprint arXiv:2601.xxxxx},
+  booktitle={arXiv preprint arXiv:2602.xxxxx},
   year={2026}
 }`}
           />
