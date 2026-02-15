@@ -146,44 +146,38 @@ export default function ExampleProjectPage() {
               <figure className="h-full flex flex-col justify-between">
                 <img
                   src="/research/svsm/teaser_flop_fixed_final.png"
-                  alt="Scaling law: Overall model compute efficiency"
+                  alt="Scaling law: RE10K experiment"
                   className="rounded-xl border w-full mb-2"
                 />
                 <figcaption className="text-sm text-center text-gray-500 dark:text-gray-400">
                   RE10K: 2 context views. SVSM achieves equal performance with 3 times less compute.
                 </figcaption>
               </figure>
-              <figure>
-                <img
-                  src="/research/svsm/data_param_laws_fix.png"
-                  alt="Scaling law: RE10K experiment"
-                  className="rounded-xl border w-full mb-2"
-                />
-                <figcaption className="text-sm text-center text-gray-500 dark:text-gray-400">
-                  RE10K: Data and parameter chinchilla-style scaling laws.
-                </figcaption>
-              </figure>
-              <figure>
-                <img
-                  src="/research/svsm/dl3dv_scaling_fixed.png"
-                  alt="Scaling law: DL3DV experiment"
-                  className="rounded-xl border w-full mb-2"
-                />
-                <figcaption className="text-sm text-center text-gray-500 dark:text-gray-400">
-                  DL3DV: 4 context views. PRoPE enables SVSM to match LVSM in scaling with a lower compute cost.
-                </figcaption>
-              </figure>
-              <figure>
-                <img
-                  src="/research/svsm/obj_scaling_final_fixed.png"
-                  alt="Scaling law: Objaverse experiment"
-                  className="rounded-xl border w-full mb-2"
-                />
-                <figcaption className="text-sm text-center text-gray-500 dark:text-gray-400">
-                  Objaverse: 8 context views. SVSM has substantial compute advantage.
-                </figcaption>
-              </figure>
+              {/* Right column: DL3DV and Objaverse stacked */}
+              <div className="flex flex-col gap-8 h-full">
+                <figure>
+                  <img
+                    src="/research/svsm/dl3dv_scaling_fixed.png"
+                    alt="Scaling law: DL3DV experiment"
+                    className="rounded-xl border w-full mb-2"
+                  />
+                  <figcaption className="text-sm text-center text-gray-500 dark:text-gray-400">
+                    DL3DV: 4 context views. PRoPE enables SVSM to match LVSM in scaling with a lower compute cost.
+                  </figcaption>
+                </figure>
+                <figure>
+                  <img
+                    src="/research/svsm/obj_scaling_final_fixed.png"
+                    alt="Scaling law: Objaverse experiment"
+                    className="rounded-xl border w-full mb-2"
+                  />
+                  <figcaption className="text-sm text-center text-gray-500 dark:text-gray-400">
+                    Objaverse: 8 context views. SVSM has substantial compute advantage. Bottlenecked versions scale the same.
+                  </figcaption>
+                </figure>
+              </div>
             </div>
+
 
             {/* <p>
               By design, the rendering speed is also significantly faster.
