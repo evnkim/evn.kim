@@ -55,7 +55,7 @@ export default function ExampleProjectPage() {
       <main>
         <div className="flex justify-center my-8">
           <Figure
-            src="/research/svsm/teaser_scaling_main_fixed.png"
+            src="/research/svsm/teaser_flop_fixed_final.png"
             alt="Scaling laws comparison"
             caption="Performance vs. compute scaling comparison between SVSM and LVSM on RealEstate10K."
             className="max-w-lg"
@@ -107,7 +107,16 @@ export default function ExampleProjectPage() {
               same <InlineMath>{"B_{\\text{eff}}"}</InlineMath> achieve nearly identical performance 
               (within ±0.2 PSNR).
             </p>
-            <b>TODO: insert figure here</b>
+            <figure>
+              <img
+                src="/research/svsm/ebs.png"
+                alt="Effective batch size scaling law"
+                className="rounded-xl border w-full mb-2"
+              />
+              <figcaption className="text-sm text-center text-gray-500 dark:text-gray-400">
+                Effective batch size scaling: configurations with same <InlineMath>{"B_{\\text{eff}}"}</InlineMath> achieve nearly identical performance.
+              </figcaption>
+            </figure>
             <p className="mb-4">
               For decoder-only LVSM, compute scales as:
             </p>
@@ -129,14 +138,56 @@ export default function ExampleProjectPage() {
         <Section title="Results">
           <SubSection title="Scaling Laws: compute-efficent Pareto frontier.">
             <p>
-              We evaluate our architecture rigorously by training both models on various compute budgets. We also test in several datasets and view context count settings: RE10K (2 context views), DL3DV (4 context views), and Objaverse (8 context views). In all cases, SVSM consistently requires much less training compute to achieve the same performance as LVSM.
+              We evaluate our architecture rigorously by training both models on various compute budgets. We also test in several datasets and view context count settings: RE10K (2 context views), DL3DV (4 context views), and Objaverse (8 context views). In all cases, SVSM (in blue) consistently requires much less training compute to achieve the same performance as LVSM.
             </p>
 
-            <p><b>TODO: 3 scaling graphs</b> </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+              {/* Left column: RE10K Main */}
+              <figure className="h-full flex flex-col justify-between">
+                <img
+                  src="/research/svsm/teaser_flop_fixed_final.png"
+                  alt="Scaling law: Overall model compute efficiency"
+                  className="rounded-xl border w-full mb-2"
+                />
+                <figcaption className="text-sm text-center text-gray-500 dark:text-gray-400">
+                  RE10K: 2 context views. SVSM achieves equal performance with 3 times less compute.
+                </figcaption>
+              </figure>
+              <figure>
+                <img
+                  src="/research/svsm/data_param_laws_fix.png"
+                  alt="Scaling law: RE10K experiment"
+                  className="rounded-xl border w-full mb-2"
+                />
+                <figcaption className="text-sm text-center text-gray-500 dark:text-gray-400">
+                  RE10K: Data and parameter chinchilla-style scaling laws.
+                </figcaption>
+              </figure>
+              <figure>
+                <img
+                  src="/research/svsm/dl3dv_scaling_fixed.png"
+                  alt="Scaling law: DL3DV experiment"
+                  className="rounded-xl border w-full mb-2"
+                />
+                <figcaption className="text-sm text-center text-gray-500 dark:text-gray-400">
+                  DL3DV: 4 context views. PRoPE enables SVSM to match LVSM in scaling with a lower compute cost.
+                </figcaption>
+              </figure>
+              <figure>
+                <img
+                  src="/research/svsm/obj_scaling_final_fixed.png"
+                  alt="Scaling law: Objaverse experiment"
+                  className="rounded-xl border w-full mb-2"
+                />
+                <figcaption className="text-sm text-center text-gray-500 dark:text-gray-400">
+                  Objaverse: 8 context views. SVSM has substantial compute advantage.
+                </figcaption>
+              </figure>
+            </div>
 
-            <p>
+            {/* <p>
               By design, the rendering speed is also significantly faster.
-            </p>
+            </p> */}
             {/* <div className="overflow-x-auto mb-8">
               <table className="w-full text-sm">
                 <thead>
@@ -196,6 +247,12 @@ export default function ExampleProjectPage() {
               src="/research/svsm/qualitative_fourview.png"
               alt="DL3DV qualitative results"
               caption="Qualitative comparison on DL3DV dataset (4 context views)."
+            />
+
+            <Figure
+              src="/research/svsm/objaverse_samples.png"
+              alt="Objaverse qualitative results"
+              caption="Multiview consistency of SVSM outputs on Objaverse."
             />
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 my-8">
