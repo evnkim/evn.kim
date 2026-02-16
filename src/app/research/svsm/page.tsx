@@ -1,5 +1,7 @@
 "use client";
 
+import { useEffect } from "react";
+import { useTheme } from "next-themes";
 import {
   ResearchHeader,
   Section,
@@ -19,8 +21,8 @@ import {
 const projectData = {
   title: "Scaling View Synthesis Transformers",
   authors: [
-    { name: "Evan Kim*", affiliation: 1, url: "https://evn.kim" },
-    { name: "Hyunwoo Ryu*", affiliation: 1, url: "https://sites.google.com/view/hyunwooryu" },
+    { name: "Evan Kim", affiliation: 1, url: "https://evn.kim", equalContribution: true },
+    { name: "Hyunwoo Ryu", affiliation: 1, url: "https://sites.google.com/view/hyunwooryu", equalContribution: true },
     { name: "Thomas W. Mitchel", affiliation: 2, url: "https://mitchel.computer"},
     { name: "Vincent Sitzmann", affiliation: 1, url: "https://www.vincentsitzmann.com/"}
   ],
@@ -40,6 +42,13 @@ const projectData = {
 // ============================================
 
 export default function ExampleProjectPage() {
+  const { setTheme } = useTheme();
+
+  // Force light mode when this page loads
+  useEffect(() => {
+    setTheme("light");
+  }, [setTheme]);
+
   return (
     <div className="w-full max-w-4xl mx-auto px-4 py-8">
       {/* Hero Section */}
@@ -74,8 +83,7 @@ export default function ExampleProjectPage() {
             alt="Method overview diagram"
             caption={
               <>
-                Figure 1: Architectures of the current SOTA, the{" "} 
-                <CyanLink href="https://haian-jin.github.io/projects/LVSM/">decoder-only LVSM</CyanLink>{" "}
+                Figure 1: Architectures of the current SOTA, the decoder-only LVSM
                 (a) and SVSM (ours, b). We demonstrate that an encoder-decoder transformer
                 architecture outperforms the prior state-of-the-art model while dramatically
                 reducing the training compute budget.
@@ -111,7 +119,7 @@ export default function ExampleProjectPage() {
               <img
                 src="/research/svsm/ebs.png"
                 alt="Effective batch size scaling law"
-                className="rounded-xl border w-full mb-2"
+                className="w-full mb-2"
               />
               <figcaption className="text-sm text-center text-gray-500 dark:text-gray-400">
                 Effective batch size scaling: configurations with same <InlineMath>{"B_{\\text{eff}}"}</InlineMath> achieve nearly identical performance.
@@ -143,11 +151,11 @@ export default function ExampleProjectPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
               {/* Left column: RE10K Main */}
-              <figure className="h-full flex flex-col justify-between">
+              <figure className="h-full flex flex-col justify-center">
                 <img
                   src="/research/svsm/teaser_flop_fixed_final.png"
                   alt="Scaling law: RE10K experiment"
-                  className="rounded-xl border w-full mb-2"
+                  className="w-full mb-2"
                 />
                 <figcaption className="text-sm text-center text-gray-500 dark:text-gray-400">
                   RE10K: 2 context views. SVSM achieves equal performance with 3 times less compute.
@@ -159,7 +167,7 @@ export default function ExampleProjectPage() {
                   <img
                     src="/research/svsm/dl3dv_scaling_fixed.png"
                     alt="Scaling law: DL3DV experiment"
-                    className="rounded-xl border w-full mb-2"
+                    className="w-full mb-2"
                   />
                   <figcaption className="text-sm text-center text-gray-500 dark:text-gray-400">
                     DL3DV: 4 context views. PRoPE enables SVSM to match LVSM in scaling with a lower compute cost.
@@ -169,7 +177,7 @@ export default function ExampleProjectPage() {
                   <img
                     src="/research/svsm/obj_scaling_final_fixed.png"
                     alt="Scaling law: Objaverse experiment"
-                    className="rounded-xl border w-full mb-2"
+                    className="w-full mb-2"
                   />
                   <figcaption className="text-sm text-center text-gray-500 dark:text-gray-400">
                     Objaverse: 8 context views. SVSM has substantial compute advantage. Bottlenecked versions scale the same.

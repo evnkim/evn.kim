@@ -6,44 +6,55 @@ import { useState } from "react";
  * Author list with superscript affiliations (for research papers)
  */
 export const AuthorList: React.FC<{
-  authors: { name: string; affiliation: number; url?: string }[];
+  authors: { name: string; affiliation: number; url?: string; equalContribution?: boolean }[];
   affiliations: Record<number, string>;
   className?: string;
-}> = ({ authors, affiliations, className = "" }) => (
-  <div className={`mb-4 ${className}`}>
-    <div className="text-lg">
-      {authors.map((author, idx) => (
-        <span key={idx}>
-          {author.url ? (
-            <a
-              href={author.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-cyan-500 transition-colors"
-            >
-              {author.name}
-            </a>
-          ) : (
-            author.name
-          )}
-          <sup className="text-xs ml-0.5">
-            {author.affiliation}
-          </sup>
-          {idx < authors.length - 1 && ", "}
-        </span>
-      ))}
+}> = ({ authors, affiliations, className = "" }) => {
+  const hasEqualContribution = authors.some(author => author.equalContribution);
+  
+  return (
+    <div className={`mb-4 ${className}`}>
+      <div className="text-lg">
+        {authors.map((author, idx) => (
+          <span key={idx}>
+            {author.url ? (
+              <a
+                href={author.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-cyan-500 transition-colors"
+              >
+                {author.name}
+              </a>
+            ) : (
+              author.name
+            )}
+            {author.equalContribution && "*"}
+            <sup className="text-xs ml-0.5">
+              {author.affiliation}
+            </sup>
+            {idx < authors.length - 1 && ", "}
+          </span>
+        ))}
+      </div>
+      <div className="text-sm text-gray-600 dark:text-gray-400 italic mt-2">
+        {Object.entries(affiliations).map(([num, name], idx) => (
+          <span key={num}>
+            <sup>{num}</sup>
+            {name}
+            {idx < Object.entries(affiliations).length - 1 && ", "}
+          </span>
+        ))}
+        {hasEqualContribution && (
+          <>
+            <br />
+            <span className="text-xs">* Equal contribution</span>
+          </>
+        )}
+      </div>
     </div>
-    <div className="text-sm text-gray-600 dark:text-gray-400 italic mt-2">
-      {Object.entries(affiliations).map(([num, name], idx) => (
-        <span key={num}>
-          <sup>{num}</sup>
-          {name}
-          {idx < Object.entries(affiliations).length - 1 && ", "}
-        </span>
-      ))}
-    </div>
-  </div>
-);
+  );
+};
 
 /**
  * Conference/venue badge (e.g., "ICLR 2025 (Oral)")

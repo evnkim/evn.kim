@@ -6,7 +6,7 @@ import { FaMoon, FaSun } from "react-icons/fa";
 
 export default function ThemeToggle() {
   const [mounted, setMounted] = useState(false);
-  const { theme, setTheme } = useTheme();
+  const { resolvedTheme, setTheme } = useTheme();
 
   useEffect(() => {
     setMounted(true);
@@ -17,9 +17,9 @@ export default function ThemeToggle() {
   return (
     <button
       className="rounded-full p-2 text-black dark:text-white text-xl hover:text-cyan-600 dark:hover:text-cyan-300"
-      onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+      onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
     >
-      {theme === "dark" ? <FaSun /> : <FaMoon />}
+      {resolvedTheme === "dark" ? <FaSun /> : <FaMoon />}
     </button>
   );
 }
