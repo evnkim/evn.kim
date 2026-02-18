@@ -28,7 +28,7 @@ const projectData = {
   ],
   affiliations: {
     1: "MIT",
-    2: "PlayStation",
+    2: "Adobe",
   },
   links: [
     { label: "arXiv", url: "#" },
