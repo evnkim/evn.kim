@@ -295,13 +295,6 @@ export default function ExampleProjectPage() {
 }`}
           />
         </Section>
-
-        <Section title="Acknowledgements">
-          <p>
-            We thank [names] for helpful discussions. This work was supported by
-            [funding sources].
-          </p>
-        </Section>
       </main>
     </div>
   );
