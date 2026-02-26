@@ -31,7 +31,7 @@ const projectData = {
     2: "Adobe",
   },
   links: [
-    { label: "arXiv", url: "#" },
+    { label: "arXiv", url: "https://arxiv.org/abs/2602.21341" },
     { label: "Code", url: "https://github.com/evnkim/SVSM" },
   ],
   summary: "TL;DR: view synthesis transformers which achieve SoTA PSNR with 3x less FLOPs.",
@@ -290,7 +290,7 @@ export default function ExampleProjectPage() {
             citation={`@inproceedings{kim2026svsm,
   title={Scaling View Synthesis Transformers},
   author={Evan Kim and Hyunwoo Ryu and Thomas W. Mitchel and Vincent Sitzmann},
-  booktitle={arXiv preprint arXiv:2602.xxxxx},
+  booktitle={arXiv preprint arXiv:2602.21341},
   year={2026}
 }`}
           />
