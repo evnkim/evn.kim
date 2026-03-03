@@ -292,7 +292,7 @@ export default function ExampleProjectPage() {
             citation={`@inproceedings{kim2026svsm,
   title={Scaling View Synthesis Transformers},
   author={Evan Kim and Hyunwoo Ryu and Thomas W. Mitchel and Vincent Sitzmann},
-  booktitle={arXiv preprint arXiv:2602.21341},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
   year={2026}
 }`}
           />
