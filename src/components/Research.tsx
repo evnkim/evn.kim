@@ -65,10 +65,10 @@ export const VenueBadge: React.FC<{
   className?: string;
 }> = ({ venue, note, className = "" }) => (
   <div
-    className={`inline-block bg-gradient-to-r from-cyan-500 to-teal-500 text-white px-5 py-2 rounded-full font-semibold text-sm shadow-lg shadow-cyan-500/30 ${className}`}
+    className={`inline-block text-2xl font-semibold text-cyan-700 dark:text-cyan-400 ${className}`}
   >
     {venue}
-    {note && <span className="font-normal opacity-90"> ({note})</span>}
+    {note && <span className="opacity-80"> ({note})</span>}
   </div>
 );
 
@@ -137,14 +137,14 @@ export const ResearchHeader: React.FC<{
         <AuthorList authors={authors} affiliations={affiliations} />
       )}
 
+      {links && links.length > 0 && (
+        <ButtonLinkGroup links={links} className="mb-3" />
+      )}
+
       {venue && (
         <div className="mb-6">
           <VenueBadge venue={venue} note={venueNote} />
         </div>
-      )}
-
-      {links && links.length > 0 && (
-        <ButtonLinkGroup links={links} className="mb-8" />
       )}
 
       {summary && (

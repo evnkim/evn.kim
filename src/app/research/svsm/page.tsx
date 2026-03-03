@@ -30,6 +30,7 @@ const projectData = {
     1: "MIT",
     2: "Adobe",
   },
+  venue: "CVPR 2026",
   links: [
     { label: "arXiv", url: "https://arxiv.org/abs/2602.21341" },
     { label: "Code", url: "https://github.com/evnkim/SVSM" },
@@ -56,6 +57,7 @@ export default function ExampleProjectPage() {
         title={projectData.title}
         authors={projectData.authors}
         affiliations={projectData.affiliations}
+        venue={projectData.venue}
         links={projectData.links}
         summary={projectData.summary}
       />
@@ -73,7 +75,7 @@ export default function ExampleProjectPage() {
 
         <Section title="Abstract">
             <p>
-            Recently, geometry-free view synthesis transformers have achieved state-of-the-art results in Novel View Synthesis (NVS), outperforming traditional approaches that rely on explicit geometry modeling. However, the specific factors that govern how their performance scales with compute remain poorly understood. In this work, we conduct a rigorous analysis of the scaling laws for view synthesis transformers and elucidate a series of design choices for training compute-optimal NVS models. Most significantly, we find that an encoder–decoder architecture, which was previously found to be less scalable, can in fact be compute-optimal. We attribute the previously inferior performance of previous encoder–decoder methods to certain architectural choices and inconsistent training compute across comparisons. Across several compute levels, we demonstrate that our encoder–decoder architecture, which we call the <b>Scalable View Synthesis Model (SVSM)</b>, scales as effectively as decoder-only models, achieves a superior performance–compute Pareto frontier, and outperforms the previous state-of-the-art on real-world NVS benchmarks with substantially reduced training compute.
+            Geometry-free view synthesis transformers have recently achieved state-of-the-art performance in Novel View Synthesis (NVS), outperforming traditional approaches that rely on explicit geometry modeling. Yet the factors governing their scaling with compute remain unclear. We present a systematic study of scaling laws for view synthesis transformers and derive design principles for training compute-optimal NVS models. Contrary to prior findings, we show that encoder–decoder architectures can be compute-optimal; we trace earlier negative results to suboptimal architectural choices and comparisons across unequal training compute budgets. Across several compute levels, we demonstrate that our encoder–decoder architecture, which we call the <b>Scalable View Synthesis Model (SVSM)</b>, scales as effectively as decoder-only models, achieves a superior performance–compute Pareto frontier, and surpasses the previous state-of-the-art on real-world NVS benchmarks with substantially reduced training compute.
             </p>
         </Section>
 
