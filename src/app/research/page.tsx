@@ -1,7 +1,15 @@
 import { Navbar } from "../Navbar";
 import Link from "next/link";
 
-const researchItems = [
+type ResearchItem = {
+  title: string;
+  authors: string;
+  venue: string;
+  teaser: string;
+  teaserAlt: string;
+} & ({ slug: string } | { externalUrl: string });
+
+const researchItems: ResearchItem[] = [
   {
     slug: "svsm",
     title: "Scaling View Synthesis Transformers",
