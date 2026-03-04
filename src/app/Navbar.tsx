@@ -29,27 +29,33 @@ const Navlink: React.FC<{
 const Navbar: React.FC = () => {
   return (
     <nav className="w-full">
-      <div className="container mx-auto flex justify-between items-center">
+      <div className="container mx-auto flex items-center justify-between gap-2">
         <Link
           href="/"
-          className="text-4xl font-medium text-black dark:text-white"
+          className="text-2xl sm:text-4xl font-medium text-black dark:text-white leading-tight shrink-0"
         >
-          Evan Kim
+          <span className="sm:hidden">Evan</span>
+          <span className="hidden sm:inline">Evan Kim</span>
         </Link>
-        <ul className="flex space-x-4 items-center">
-          <li className="hidden md:block">
-            <Navlink href="/" label="Home" addtlCSS="" />
-          </li>
-          <li>
-            <Navlink href="/projects" label="Projects" addtlCSS="" />
-          </li>
-          <li>
-            <Navlink href="/blogs" label="Blogs" addtlCSS="" />
-          </li>
-          <li>
+        <div className="flex items-center gap-2">
+          <ul className="flex items-center gap-3 text-xs sm:text-base">
+            <li className="hidden sm:block">
+              <Navlink href="/" label="Home" addtlCSS="" />
+            </li>
+            <li>
+              <Navlink href="/research" label="Research" addtlCSS="" />
+            </li>
+            <li>
+              <Navlink href="/projects" label="Projects" addtlCSS="" />
+            </li>
+            <li>
+              <Navlink href="/blogs" label="Blogs" addtlCSS="" />
+            </li>
+          </ul>
+          <div className="scale-90 sm:scale-100">
             <ThemeToggle />
-          </li>
-        </ul>
+          </div>
+        </div>
       </div>
     </nav>
   );

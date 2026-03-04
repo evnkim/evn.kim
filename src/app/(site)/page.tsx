@@ -9,10 +9,9 @@ export default function Home() {
           <h1 className="text-3xl mb-2">👋 Hello!</h1>
           <div>
             <p>
-              Im currently a student at MIT studying Computer Science, Physics,
-              and some Math (8 + 6-3 + 18). I&apos;m interested in contributing
+              Im currently a student at MIT studying Computer Science and Physics. I&apos;m interested in contributing
               to embodied intelligence through computer vision -
-              see the <CyanLink href="/projects">projects</CyanLink> tab for my
+              see the <CyanLink href="/projects">projects</CyanLink> and <CyanLink href="/research">research</CyanLink> tabs for my
               progress thus far. Some highlights include creating the{" "}
               <CyanLink href="https://doi.org/10.1088/1361-648X/acfdeb">
                 first generative model for superconductors
@@ -31,7 +30,7 @@ export default function Home() {
               <CyanLink href="https://ipho-unofficial.org/timeline/2023/individual">
                 International Physics Olympiad
               </CyanLink>
-              and the{" "}
+              {" "}and the{" "}
               <CyanLink href="https://usaaao.org/2023/08/19/16th-ioaa-has-ended/">
                 International Astronomy Olympiad
               </CyanLink>{" "}

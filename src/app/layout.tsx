@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
-import { IBM_Plex_Serif } from "next/font/google";
+import { Source_Serif_4 } from "next/font/google";
 import "./globals.css";
 
 import { Providers } from "./providers";
 
-const ibmPlexSerif = IBM_Plex_Serif({ subsets: ["latin"], weight: ["400", "700"] });
+const sourceSerif4 = Source_Serif_4({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
 
 export const metadata: Metadata = {
   title: "Evan Kim",
@@ -18,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${ibmPlexSerif.className} bg-stone-100 dark:bg-stone-800`}>
+      <body className={`${sourceSerif4.className} bg-stone-100 dark:bg-stone-800`}>
         <Providers>{children}</Providers>
       </body>
     </html>

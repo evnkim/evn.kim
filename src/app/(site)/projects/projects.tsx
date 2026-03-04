@@ -38,7 +38,7 @@ const ProjectsPage = () => {
       description:
         "Used generative modeling to aid High-temp superconductor discovery; presented at APS March Meeting 2023. Published in the Journal of Physics: Condensed Matter.",
       tags: ["ML", "Python", "TensorFlow", "Physics"],
-      demoLink: "https://doi.org/10.1088/1361-648X/acfdebA",
+      demoLink: "https://doi.org/10.1088/1361-648X/acfdeb",
     },
     {
       title: "Straightening Flows",

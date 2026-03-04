@@ -1,5 +1,5 @@
 import { Inter } from "next/font/google";
-import ThemeToggle from "../ThemeToggle";
+import ThemeToggle from "../../ThemeToggle";
 import "katex/dist/katex.min.css";
 
 const inter = Inter({ subsets: ["latin"] });
