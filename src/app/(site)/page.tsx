@@ -1,5 +1,4 @@
-import Footer from "../Footer";
-import { CyanLink } from "@/components";
+import { CyanLink, PublicationList, SiteLinks } from "@/components";
 
 export default function Home() {
   return (
@@ -28,12 +27,11 @@ export default function Home() {
               . I also offer{" "}
               <CyanLink href="https://cambphys.com/">tutoring</CyanLink>.
             </p>
-            <p>
-              Please contact me at evnkim [at] mit [dot] edu if you would like to chat!
-            </p>
           </div>
+          <SiteLinks />
+          <h2 className="text-2xl font-semibold mt-8 mb-3">Publications</h2>
+          <PublicationList />
         </div>
-        <Footer />
       </div>
     </main>
   );

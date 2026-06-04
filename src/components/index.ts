@@ -25,6 +25,11 @@ export {
 // Tags
 export { Tag } from "./Tag";
 
+// Publications
+export { PublicationList } from "./PublicationList";
+
+export { SiteLinks } from "./SiteLinks";
+
 // Math (LaTeX)
 export { InlineMath, BlockMath } from "./Math";
 
