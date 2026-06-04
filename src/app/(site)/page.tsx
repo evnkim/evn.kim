@@ -9,49 +9,27 @@ export default function Home() {
           <h1 className="text-3xl mb-2">👋 Hello!</h1>
           <div>
             <p>
-              Im currently a student at MIT studying Computer Science and Physics. I&apos;m interested in contributing
-              to embodied intelligence through computer vision -
-              see the <CyanLink href="/projects">projects</CyanLink> and <CyanLink href="/research">research</CyanLink> tabs for my
-              progress thus far. Some highlights include creating the{" "}
-              <CyanLink href="https://doi.org/10.1088/1361-648X/acfdeb">
-                first generative model for superconductors
-              </CyanLink>
-              , experimenting with different flow matching trajectories, and
-              creating <CyanLink href="/research/svsm">efficient view synthesis transformers</CyanLink>. My research has
-              also been recognized by the{" "}
-              <CyanLink href="https://www.societyforscience.org/regeneron-sts/2023-student-finalists/evan-kim/">
-                Regeneron Science Talent Search
-              </CyanLink>
-              .
+              I&apos;m currently a researcher at OpenAI. Before that, I studied Computer Science and
+              Physics at MIT where I did research on{" "}
+              <CyanLink href="https://doi.org/10.1088/1361-648X/acfdeb">generative modeling</CyanLink>
+              ,{" "}
+              <CyanLink href="/research/svsm">novel view synthesis</CyanLink>, and{" "}
+              <CyanLink href="https://vera.csail.mit.edu">world models for robotics</CyanLink>.
             </p>
             <p>
-              In a past life, I was an aspiring physicist, participating in
-              the{" "}
+              Before that, I received gold medals at the{" "}
               <CyanLink href="https://ipho-unofficial.org/timeline/2023/individual">
                 International Physics Olympiad
-              </CyanLink>
-              {" "}and the{" "}
-              <CyanLink href="https://usaaao.org/2023/08/19/16th-ioaa-has-ended/">
-                International Astronomy Olympiad
               </CyanLink>{" "}
-              <CyanLink href="https://usaaao.org/2022/08/23/15th-ioaa-has-ended/">
-                olympiad
+              and the{" "}
+              <CyanLink href="https://usaaao.org/2023/08/19/16th-ioaa-has-ended/">
+                International Olympiad on Astronomy and Astrophysics
               </CyanLink>
-              . I&apos;ve
-              also translated this experience into the form of{" "}
-              <CyanLink href="https://youtube.com/@slippinghexagons">
-                educational YouTube videos
-              </CyanLink>
-              , which gained some amount of traction during the pandemic. I also
-              offer <CyanLink href="https://cambphys.com/">tutoring</CyanLink>.
+              . I also offer{" "}
+              <CyanLink href="https://cambphys.com/">tutoring</CyanLink>.
             </p>
             <p>
-              In my free time, I enjoy playing basketball, trying new foods, and
-              puzzling with my friends. Add me on beli!
-            </p>
-            <p>
-              Please contact me at evnkim [at] mit [dot] edu if you would like
-              to chat!
+              Please contact me at evnkim [at] mit [dot] edu if you would like to chat!
             </p>
           </div>
         </div>
@@ -60,4 +38,3 @@ export default function Home() {
     </main>
   );
 }
-

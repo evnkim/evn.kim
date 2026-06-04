@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { FiGithub, FiLinkedin } from "react-icons/fi";
-import { Mail, GraduationCap } from "lucide-react";
+import { GraduationCap } from "lucide-react";
 
 const Footer: React.FC = () => {
   return (
@@ -23,14 +23,6 @@ const Footer: React.FC = () => {
             className="text-gray-600 hover:text-cyan-600 dark:text-gray-400 dark:hover:text-cyan-300"
           >
             <FiLinkedin size={24} />
-          </Link>
-          <Link
-            href="mailto:evnkim@mit.edu"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-600 hover:text-cyan-600 dark:text-gray-400 dark:hover:text-cyan-300"
-          >
-            <Mail size={24} />
           </Link>
           <Link
             href="https://scholar.google.com/citations?user=UTtaJaMAAAAJ&hl=en"
