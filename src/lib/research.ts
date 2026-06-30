@@ -16,6 +16,15 @@ export const researchItems: ResearchItem[] = [
     teaserAlt: "SVSM teaser figure",
   },
   {
+    externalUrl: "https://vera.csail.mit.edu/",
+    title: "Turning Video Models into Generalist Robot Policies",
+    authors:
+      "Sizhe Lester Li*, Evan Kim*, Xingjian Bai*, Tong Zhao, Tao Pang, Max Simchowitz, Vincent Sitzmann",
+    venue: "Preprint 2026",
+    teaser: "/research/vera/vera_teaser.png",
+    teaserAlt: "VERA real-world robot manipulation results",
+  },
+  {
     externalUrl: "https://doi.org/10.1088/1361-648X/acfdeb",
     title: "ScGAN: a generative adversarial network to predict hypothetical superconductors",
     authors: "Evan Kim, S V Dordevic",
