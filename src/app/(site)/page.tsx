@@ -8,8 +8,8 @@ export default function Home() {
           <h1 className="text-3xl mb-2">👋 Hello!</h1>
           <div>
             <p>
-              I&apos;m currently a researcher at OpenAI. Before that, I studied Computer Science and
-              Physics at MIT where I did research on{" "}
+              I&apos;m currently a researcher at OpenAI working on pretraining architecture. Before
+              that, I studied Computer Science and Physics at MIT where I did research on{" "}
               <CyanLink href="https://doi.org/10.1088/1361-648X/acfdeb">generative modeling</CyanLink>
               ,{" "}
               <CyanLink href="/research/svsm">novel view synthesis</CyanLink>, and{" "}
